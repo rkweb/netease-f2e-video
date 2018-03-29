@@ -51,16 +51,17 @@ netease f2e video
 	pointer-events: none;
 }
 
+//安卓下注意事项
+//video的object-fit值和video-poster的backdground-size值是对应的
+//object-fit: cover    backdground-size: cover
+//object-fit: contain  backdground-size: contain
+//object-fit: fill     backdground-size: 100% 100%
+
 ```
 
 
 ### js
 ```
-	//提前加载下视频
-	$('.video')[0].load();
-	$(document).on('WeixinJSBridgeReady', function () {
-	    $('.video')[0].load();
-	});
 	
 	
 	//安卓下
@@ -72,21 +73,12 @@ netease f2e video
 			return false;
 		});
 	}
-	//安卓下注意事项
-	//video的object-fit值和video-poster的backdground-size值是对应的
-	//object-fit: cover    backdground-size: cover
-	//object-fit: contain  backdground-size: contain
-	//object-fit: fill     backdground-size: 100% 100%
+	
 	
 	
 	//ios下
 	//loading完后可以直接播放$('.video)[0].play();
 	
-	
-	//loading结束后回调
-	function loadEndedCallBack () {
-		$('.video')[0].play();
-	}
 	
 	
 	
